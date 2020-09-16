@@ -1,3 +1,9 @@
+/* Author: Allison Delgado
+ * Last updated 9/15/20 
+ * GuessingGame chooses a random number, and the user tries to guess it.
+ */
+
+
 #include <iostream>
 using namespace std;
 
@@ -10,21 +16,23 @@ int main() {
 
   //loop runs during gameplay
   while (keepPlaying == true) {
-    int random = rand()%101;
+    int random = rand()%101; //gives numbers between 0 and 100
     cout << "Here is the top secret number: " <<  random << endl;
+
+    //until user has guessed the random number...
     while(userGuess != random){
       cout << "Enter your guess" << endl;
       cin >> userGuess;
       
-      if (userGuess > random){
+      if (userGuess > random){ //guess is too high
 	cout << "Your guess was too high." << endl;
 	count++;
       }
-      else if (userGuess < random){
+      else if (userGuess < random){ //guess is too low
 	cout << "Your guess was too low." << endl;
 	count++;
       }
-      else {
+      else { //number guessed correctly
 	count++;
 	cout << "You guessed it!" << endl;
 	cout << "Number of guesses: " << count << endl;
@@ -40,7 +48,7 @@ int main() {
       cout << "goodbye!" << endl;
     }
   }
-  //return
+  
   return 0;
  }
 
