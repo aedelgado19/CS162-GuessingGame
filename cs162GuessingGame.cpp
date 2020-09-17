@@ -10,7 +10,6 @@ using namespace std;
 int main() {
   srand(time(NULL));
   int userGuess = 0;
-  int count = 0;
   bool keepPlaying = true;
   char yn = 'a';
 
@@ -18,7 +17,7 @@ int main() {
   while (keepPlaying == true) {
     int random = rand()%101; //gives numbers between 0 and 100
     cout << "Here is the top secret number: " <<  random << endl;
-
+    int count = 0;
     //until user has guessed the random number...
     while(userGuess != random){
       cout << "Enter your guess" << endl;
